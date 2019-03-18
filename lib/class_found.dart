@@ -1,4 +1,20 @@
 ///
+/// 探索class的定义
+///
+
+class UserDto {
+  int userId;
+  String userName;
+  String password;
+  DateTime birthday;
+
+  UserDto({this.userId, this.userName, this.password, this.birthday});
+
+  static UserDto initialUserDto(){
+    return UserDto(userId: -1,userName: 'Anonymous',password: 'anonymous',birthday: DateTime.now());
+  }
+}
+
 /// class 的found试验场
 /// .. 级联调用操作，也就是免除一个连续的使用对象的调用方法
 ///

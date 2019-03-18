@@ -4,6 +4,7 @@ import 'package:megatron/variables.dart' as variables;
 import 'package:megatron/functions.dart' as functions;
 import 'package:megatron/class_found.dart' as class_found;
 import 'package:megatron/asynchrony_support.dart' as asynchronous_support;
+import 'package:megatron/functions_found.dart' as functions_found;
 
 main(List<String> arguments){
   print('Hello world: ${megatron.calculate()}!');
@@ -45,4 +46,18 @@ main(List<String> arguments){
     print('打印数据信息');
     return DateTime.now().toString();
   });
+
+  functions_found.logInformation('柳絮');
+
+  String loginValue = functions_found.optionalArgument(creator: 'liuxu');
+  print(loginValue);
+
+  var userDto = functions_found.generatorUser('liuxu', 'lxzxx');
+  print(userDto.userName);
+
+  functions_found.nameDefaultValue(userName: 'lzxx');
+
+  functions_found.positionDefaultValue('liuxu',90,password: 'lxzxx');
+
+  functions_found.doStuff();
 }
