@@ -60,4 +60,24 @@ main(List<String> arguments){
   functions_found.positionDefaultValue('liuxu',90,password: 'lxzxx');
 
   functions_found.doStuff();
+
+  var clueDto = class_found.ClueDto();
+  clueDto.createTime = DateTime.now();
+
+  print('User infromation is:$clueDto');
+
+  class_found.ClueDto nullClue;
+  ///
+  /// 感觉遇到了异常之后，Dart会停止在那儿，然后不执行下面的语句了
+  ///
+  nullClue?.createTime = DateTime.now();
+
+  var originClue = class_found.ClueDto.append();
+  print('The Clue JSON Information:${originClue.createTime}');
+
+  var crawlerResource = class_found.CrawlerResource(resourceUri: Uri.file('F:/'),handler: (class_found.ResourceFileType type){
+    return '是的，这个地址很好:$type';
+  });
+  var content = crawlerResource.parse(class_found.ResourceFileType.html);
+  print(content);
 }
