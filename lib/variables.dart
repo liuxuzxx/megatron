@@ -53,3 +53,18 @@ void changeVarConst(){
   fox.add('adfasdf');
   foxMail.add('adfasd');
 }
+
+///
+/// 奇怪啊，Dart2.1竟然不支持Set，Dart2.2支持Set的这种写法了
+///
+Set<String> halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+
+Set<String> userIds = <String>{};
+
+void addSet(){
+  userIds.add('userId_1');
+  userIds.addAll(halogens);
+}
+
+List<Map<String,String>> language = [{'name':'cpp'},{'name':'Java'},{'name':'ReactJS'}];
+
